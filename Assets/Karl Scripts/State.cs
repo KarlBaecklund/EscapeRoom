@@ -7,45 +7,46 @@ using UnityEngine.InputSystem;
 public class State : MonoBehaviour
 {
     public List<GameObject> textList = new List<GameObject>();
-    //public InputActionMap actionMap;
+    PlayerInput playerInput;
 
     bool[] pressedList = new bool[16];
 
-    List<string> inputList = new List<string>();
+    List<string> actionList = new List<string>();
 
     bool timerIsRunning = false;
     public float timeCounter;
     XBOXAdapter xboxAdp;
-    int currentPuzszle = 0;
+    int currentPuzszle;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        foreach (var item in actionMap.actions)
+        playerInput = GetComponent<PlayerInput>();
+        foreach (var item in playerInput.actions)
         {
-            Debug.Log(item.name);
+            actionList.Add(item.name);
         }
         xboxAdp = new XBOXAdapter();
     }
 
     private void Update()
     {
-        //if (timerIsRunning)
-        //{
-        //    timeCounter += Time.deltaTime;
-        //    DisplayTime(timeCounter, textList[currentPuzszle]);
-        //    //If counts up to 1 hour the game ends. 
-        //}
+        if (timerIsRunning)
+        {
+            timeCounter += Time.deltaTime;
+            DisplayTime(timeCounter, textList[currentPuzszle]);
+            //If counts up to 1 hour the game ends. 
+        }
     }
 
 
-    void TimmerChange()
+    void TimmerChange(int index)
     {
-        StateChange(textList[currentPuzszle]);
+        StateChange(textList[index]);
         if (timerIsRunning == true)
         {
             currentPuzszle++;
-            StateChange(textList[currentPuzszle]);
+            StateChange(textList[index]);
         }
 
         timeCounter = 0;
@@ -55,36 +56,23 @@ public class State : MonoBehaviour
 
     public void ButtonInput(InputAction.CallbackContext ctx)
     {
-        string action = "";
-
         if (ctx.performed)
         {
-            
-
-            //action = ctx.action.name;
-
-            //if (inputList.Count > 1)
-            //{
-            //    foreach (string item in inputList)
-            //    {
-            //        if (action != item)
-            //        {
-            //            inputList.Add(action);
-            //        }
-            //    }
-            //}
-            //else if (inputList.Count > 0)
-            //{
-            //    inputList.Add(action);
-            //}
-
-            //foreach (string item in inputList)
-            //{
-            //    Debug.Log(item);
-            //}
-            //Debug.Log("I GOT PRESSED " + ctx.action.name);
-            //TimmerChange();
-            //currentPuzszle++;
+            for (int i = 0; i < actionList.Count; i++)
+            {
+                if (ctx.action.name == actionList[i] && pressedList[i] == false)
+                {
+                    if (i == currentPuzszle)
+                    {
+                        //Debug.Log("I GOT PRESSED BY " + actionList[i]);
+                        TimmerChange(i);
+                        //currentPuzszle++;
+                        pressedList[i] = true;
+                    }
+                    
+                }
+            }
+            Debug.Log(currentPuzszle);
         }
     }
 
