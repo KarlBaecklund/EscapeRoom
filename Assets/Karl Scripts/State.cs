@@ -16,7 +16,8 @@ public class State : MonoBehaviour
     bool timerIsRunning = false;
     public float timeCounter;
     XBOXAdapter xboxAdp;
-    int currentPuzszle;
+    int currentPuzszle = 0;
+    //int timerText = 0;
 
     // Start is called before the first frame update
     private void Awake()
@@ -31,48 +32,43 @@ public class State : MonoBehaviour
 
     private void Update()
     {
-        if (timerIsRunning)
+        if (timerIsRunning )
         {
+            Debug.Log("Main: " + (currentPuzszle));
             timeCounter += Time.deltaTime;
             DisplayTime(timeCounter, textList[currentPuzszle]);
+
             //If counts up to 1 hour the game ends. 
         }
     }
 
 
-    void TimmerChange(int index)
+    void TimmerChange()
     {
-        StateChange(textList[index]);
-        if (timerIsRunning == true)
+        StateChange(textList[currentPuzszle]);
+        
+        if (timerIsRunning)
         {
             currentPuzszle++;
-            StateChange(textList[index]);
+            StateChange(textList[currentPuzszle]);
         }
-
         timeCounter = 0;
         timerIsRunning = true;
-        
     }
 
     public void ButtonInput(InputAction.CallbackContext ctx)
     {
+        //It's posible to start another event, change for next time, 
         if (ctx.performed)
         {
             for (int i = 0; i < actionList.Count; i++)
             {
                 if (ctx.action.name == actionList[i] && pressedList[i] == false)
                 {
-                    if (i == currentPuzszle)
-                    {
-                        //Debug.Log("I GOT PRESSED BY " + actionList[i]);
-                        TimmerChange(i);
-                        //currentPuzszle++;
-                        pressedList[i] = true;
-                    }
-                    
+                    TimmerChange();
+                    pressedList[i] = true;
                 }
             }
-            Debug.Log(currentPuzszle);
         }
     }
 
@@ -87,7 +83,6 @@ public class State : MonoBehaviour
         {
             changeColor.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
         }
-
     }
 
     //Displey Time
