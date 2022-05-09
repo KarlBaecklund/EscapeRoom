@@ -9,6 +9,8 @@ public class State : MonoBehaviour
     public List<GameObject> textList = new List<GameObject>();
     PlayerInput playerInput;
 
+    public UILineRenderer line;
+
     bool[] pressedList = new bool[16];
 
     List<string> actionList = new List<string>();
@@ -38,7 +40,7 @@ public class State : MonoBehaviour
             timeCounter += Time.deltaTime;
             DisplayTime(timeCounter, textList[currentPuzszle]);
 
-            //If counts up to 1 hour the game ends. 
+            //If counts up to 1 hour the game should end 
         }
     }
 
@@ -59,6 +61,7 @@ public class State : MonoBehaviour
     public void ButtonInput(InputAction.CallbackContext ctx)
     {
         //It's posible to start another event, change for next time, 
+        //Should Add point in line list for each task done. 
         if (ctx.performed)
         {
             for (int i = 0; i < actionList.Count; i++)
