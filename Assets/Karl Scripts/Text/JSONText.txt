@@ -1,1 +1,1 @@
-{"puzzle":[]}
+{"puzzle":[{"name":"hej","time":2.0,"index":1}]}

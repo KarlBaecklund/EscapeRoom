@@ -9,9 +9,9 @@ public class State : MonoBehaviour
     public List<GameObject> textList = new List<GameObject>();
     PlayerInput playerInput;
 
-    public UILineRenderer line;
+    public UILineRenderer Line;
 
-    bool[] pressedList = new bool[16];
+    bool[] pressedList = new bool[6];
 
     List<string> actionList = new List<string>();
 
@@ -20,6 +20,8 @@ public class State : MonoBehaviour
     XBOXAdapter xboxAdp;
     int currentPuzszle = 0;
     //int timerText = 0;
+
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -51,10 +53,11 @@ public class State : MonoBehaviour
         
         if (timerIsRunning)
         {
+            Line.AddPoint(new Vector2(currentPuzszle, timeCounter));
             currentPuzszle++;
             StateChange(textList[currentPuzszle]);
         }
-        timeCounter = 0;
+        //timeCounter = 0;
         timerIsRunning = true;
     }
 
@@ -70,6 +73,7 @@ public class State : MonoBehaviour
                 {
                     TimmerChange();
                     pressedList[i] = true;
+
                 }
             }
         }
@@ -94,7 +98,7 @@ public class State : MonoBehaviour
         timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        obj.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        obj.transform.GetChild(1).gameObject.GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     //Enable and Disable

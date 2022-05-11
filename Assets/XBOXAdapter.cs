@@ -80,110 +80,9 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Right Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""4d21bf9d-1aa2-4246-b9e3-be791c5c320c"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Left Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""0433b226-24d1-47d2-a9f9-fbea81fecdda"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""R Click Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""534778d7-0693-40a2-869b-a94c9cd3eea4"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""L Click Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""e2dcb25f-1a0b-4acc-8967-d43f10541664"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""LB Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""a15235ee-ce1c-4fc4-92b5-5e368cec177c"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RB Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""a86ebe85-9f43-4fb5-a8de-c24af0c669c9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RT Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""d5db0b6b-c30d-49d7-a288-5c9ddbd3e4e4"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""LT Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""93b22798-c4ab-4c4a-8079-e200fd428e81"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""X1 Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""388e5674-a7ea-4e3a-938d-621c5fe95786"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""X2 Button"",
-                    ""type"": ""Button"",
-                    ""id"": ""f7766ac2-0129-4d54-977c-13828e1d2ee5"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""98cd3268-8f2f-409a-82ca-c158c3ac2ccf"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""A Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""84d69c89-fcf1-4fec-a115-b103c8287f44"",
@@ -192,17 +91,6 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""X Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""372790f2-0e58-41bc-aa0d-f4aca60f171d"",
-                    ""path"": ""<XInputController>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""B Button"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -241,111 +129,23 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""676b011f-a98c-47fe-9db6-2d3cda0d0d0d"",
-                    ""path"": ""<XInputController>/dpad/right"",
+                    ""id"": ""98cd3268-8f2f-409a-82ca-c158c3ac2ccf"",
+                    ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Right Button"",
+                    ""action"": ""A Button"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b4c86203-6d72-436c-9b75-fad94723ab80"",
-                    ""path"": ""<XInputController>/dpad/left"",
+                    ""id"": ""372790f2-0e58-41bc-aa0d-f4aca60f171d"",
+                    ""path"": ""<XInputController>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Left Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c8c64e5e-b71c-4cd5-a8ab-14c184bd3150"",
-                    ""path"": ""<XInputController>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""R Click Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9acd2578-f2db-4c06-8350-da3c527f6ced"",
-                    ""path"": ""<XInputController>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""L Click Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c02e5ebd-6d41-4232-845b-a61bd42dd168"",
-                    ""path"": ""<XInputController>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LB Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""94cb1685-75b1-4a08-9db6-39503c0fb59b"",
-                    ""path"": ""<XInputController>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RB Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ca266788-ae32-40b5-91c9-1bc7dd38d4b8"",
-                    ""path"": ""<XInputController>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RT Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05a7a436-39e2-40a1-b56b-0922776a9db1"",
-                    ""path"": ""<XInputController>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LT Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d1e38c90-d82a-4bf3-8f1c-6347bf0e79b3"",
-                    ""path"": ""<XInputController>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""X1 Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5c41ddc2-1911-45af-ab3e-3584dfb9b9aa"",
-                    ""path"": ""<XInputController>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""X2 Button"",
+                    ""action"": ""B Button"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -362,16 +162,6 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
         m_Signal_YButton = m_Signal.FindAction("Y Button", throwIfNotFound: true);
         m_Signal_UpButton = m_Signal.FindAction("Up Button", throwIfNotFound: true);
         m_Signal_DownButton = m_Signal.FindAction("Down Button", throwIfNotFound: true);
-        m_Signal_RightButton = m_Signal.FindAction("Right Button", throwIfNotFound: true);
-        m_Signal_LeftButton = m_Signal.FindAction("Left Button", throwIfNotFound: true);
-        m_Signal_RClickButton = m_Signal.FindAction("R Click Button", throwIfNotFound: true);
-        m_Signal_LClickButton = m_Signal.FindAction("L Click Button", throwIfNotFound: true);
-        m_Signal_LBButton = m_Signal.FindAction("LB Button", throwIfNotFound: true);
-        m_Signal_RBButton = m_Signal.FindAction("RB Button", throwIfNotFound: true);
-        m_Signal_RTButton = m_Signal.FindAction("RT Button", throwIfNotFound: true);
-        m_Signal_LTButton = m_Signal.FindAction("LT Button", throwIfNotFound: true);
-        m_Signal_X1Button = m_Signal.FindAction("X1 Button", throwIfNotFound: true);
-        m_Signal_X2Button = m_Signal.FindAction("X2 Button", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -437,16 +227,6 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
     private readonly InputAction m_Signal_YButton;
     private readonly InputAction m_Signal_UpButton;
     private readonly InputAction m_Signal_DownButton;
-    private readonly InputAction m_Signal_RightButton;
-    private readonly InputAction m_Signal_LeftButton;
-    private readonly InputAction m_Signal_RClickButton;
-    private readonly InputAction m_Signal_LClickButton;
-    private readonly InputAction m_Signal_LBButton;
-    private readonly InputAction m_Signal_RBButton;
-    private readonly InputAction m_Signal_RTButton;
-    private readonly InputAction m_Signal_LTButton;
-    private readonly InputAction m_Signal_X1Button;
-    private readonly InputAction m_Signal_X2Button;
     public struct SignalActions
     {
         private @XBOXAdapter m_Wrapper;
@@ -457,16 +237,6 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
         public InputAction @YButton => m_Wrapper.m_Signal_YButton;
         public InputAction @UpButton => m_Wrapper.m_Signal_UpButton;
         public InputAction @DownButton => m_Wrapper.m_Signal_DownButton;
-        public InputAction @RightButton => m_Wrapper.m_Signal_RightButton;
-        public InputAction @LeftButton => m_Wrapper.m_Signal_LeftButton;
-        public InputAction @RClickButton => m_Wrapper.m_Signal_RClickButton;
-        public InputAction @LClickButton => m_Wrapper.m_Signal_LClickButton;
-        public InputAction @LBButton => m_Wrapper.m_Signal_LBButton;
-        public InputAction @RBButton => m_Wrapper.m_Signal_RBButton;
-        public InputAction @RTButton => m_Wrapper.m_Signal_RTButton;
-        public InputAction @LTButton => m_Wrapper.m_Signal_LTButton;
-        public InputAction @X1Button => m_Wrapper.m_Signal_X1Button;
-        public InputAction @X2Button => m_Wrapper.m_Signal_X2Button;
         public InputActionMap Get() { return m_Wrapper.m_Signal; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -494,36 +264,6 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
                 @DownButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnDownButton;
                 @DownButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnDownButton;
                 @DownButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnDownButton;
-                @RightButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnRightButton;
-                @RightButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnRightButton;
-                @RightButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnRightButton;
-                @LeftButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnLeftButton;
-                @LeftButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnLeftButton;
-                @LeftButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnLeftButton;
-                @RClickButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnRClickButton;
-                @RClickButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnRClickButton;
-                @RClickButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnRClickButton;
-                @LClickButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnLClickButton;
-                @LClickButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnLClickButton;
-                @LClickButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnLClickButton;
-                @LBButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnLBButton;
-                @LBButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnLBButton;
-                @LBButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnLBButton;
-                @RBButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnRBButton;
-                @RBButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnRBButton;
-                @RBButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnRBButton;
-                @RTButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnRTButton;
-                @RTButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnRTButton;
-                @RTButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnRTButton;
-                @LTButton.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnLTButton;
-                @LTButton.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnLTButton;
-                @LTButton.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnLTButton;
-                @X1Button.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnX1Button;
-                @X1Button.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnX1Button;
-                @X1Button.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnX1Button;
-                @X2Button.started -= m_Wrapper.m_SignalActionsCallbackInterface.OnX2Button;
-                @X2Button.performed -= m_Wrapper.m_SignalActionsCallbackInterface.OnX2Button;
-                @X2Button.canceled -= m_Wrapper.m_SignalActionsCallbackInterface.OnX2Button;
             }
             m_Wrapper.m_SignalActionsCallbackInterface = instance;
             if (instance != null)
@@ -546,36 +286,6 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
                 @DownButton.started += instance.OnDownButton;
                 @DownButton.performed += instance.OnDownButton;
                 @DownButton.canceled += instance.OnDownButton;
-                @RightButton.started += instance.OnRightButton;
-                @RightButton.performed += instance.OnRightButton;
-                @RightButton.canceled += instance.OnRightButton;
-                @LeftButton.started += instance.OnLeftButton;
-                @LeftButton.performed += instance.OnLeftButton;
-                @LeftButton.canceled += instance.OnLeftButton;
-                @RClickButton.started += instance.OnRClickButton;
-                @RClickButton.performed += instance.OnRClickButton;
-                @RClickButton.canceled += instance.OnRClickButton;
-                @LClickButton.started += instance.OnLClickButton;
-                @LClickButton.performed += instance.OnLClickButton;
-                @LClickButton.canceled += instance.OnLClickButton;
-                @LBButton.started += instance.OnLBButton;
-                @LBButton.performed += instance.OnLBButton;
-                @LBButton.canceled += instance.OnLBButton;
-                @RBButton.started += instance.OnRBButton;
-                @RBButton.performed += instance.OnRBButton;
-                @RBButton.canceled += instance.OnRBButton;
-                @RTButton.started += instance.OnRTButton;
-                @RTButton.performed += instance.OnRTButton;
-                @RTButton.canceled += instance.OnRTButton;
-                @LTButton.started += instance.OnLTButton;
-                @LTButton.performed += instance.OnLTButton;
-                @LTButton.canceled += instance.OnLTButton;
-                @X1Button.started += instance.OnX1Button;
-                @X1Button.performed += instance.OnX1Button;
-                @X1Button.canceled += instance.OnX1Button;
-                @X2Button.started += instance.OnX2Button;
-                @X2Button.performed += instance.OnX2Button;
-                @X2Button.canceled += instance.OnX2Button;
             }
         }
     }
@@ -588,15 +298,5 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
         void OnYButton(InputAction.CallbackContext context);
         void OnUpButton(InputAction.CallbackContext context);
         void OnDownButton(InputAction.CallbackContext context);
-        void OnRightButton(InputAction.CallbackContext context);
-        void OnLeftButton(InputAction.CallbackContext context);
-        void OnRClickButton(InputAction.CallbackContext context);
-        void OnLClickButton(InputAction.CallbackContext context);
-        void OnLBButton(InputAction.CallbackContext context);
-        void OnRBButton(InputAction.CallbackContext context);
-        void OnRTButton(InputAction.CallbackContext context);
-        void OnLTButton(InputAction.CallbackContext context);
-        void OnX1Button(InputAction.CallbackContext context);
-        void OnX2Button(InputAction.CallbackContext context);
     }
 }
