@@ -18,10 +18,9 @@ public class State : MonoBehaviour
     bool timerIsRunning = false;
     public float timeCounter;
     XBOXAdapter xboxAdp;
-    int currentPuzszle = 0;
+    int currentIndex;
+    int lastIndex;
     //int timerText = 0;
-
-
 
     // Start is called before the first frame update
     private void Awake()
@@ -36,29 +35,14 @@ public class State : MonoBehaviour
 
     private void Update()
     {
-        if (timerIsRunning )
+        if (timerIsRunning)
         {
-            Debug.Log("Main: " + (currentPuzszle));
-            timeCounter += Time.deltaTime;
-            DisplayTime(timeCounter, textList[currentPuzszle]);
+            //Debug.Log("Main: " + (currentPuzszle));
+            timeCounter += Time.deltaTime * 60;
+            DisplayTime(timeCounter, textList[currentIndex]);
 
             //If counts up to 1 hour the game should end 
         }
-    }
-
-
-    void TimmerChange()
-    {
-        StateChange(textList[currentPuzszle]);
-        
-        if (timerIsRunning)
-        {
-            Line.AddPoint(new Vector2(currentPuzszle, timeCounter));
-            currentPuzszle++;
-            StateChange(textList[currentPuzszle]);
-        }
-        //timeCounter = 0;
-        timerIsRunning = true;
     }
 
     public void ButtonInput(InputAction.CallbackContext ctx)
@@ -71,9 +55,44 @@ public class State : MonoBehaviour
             {
                 if (ctx.action.name == actionList[i] && pressedList[i] == false)
                 {
-                    TimmerChange();
-                    pressedList[i] = true;
-
+                    if (i >= 1)
+                    {
+                        if (ctx.action.name == actionList[actionList.Count - 1])
+                        {
+                            currentIndex = i;
+                            Line.AddPoint(new Vector2((currentIndex + 1) * 57.5f, timeCounter / 20));
+                            StateChange(textList[currentIndex]);
+                            StateChange(textList[lastIndex]);
+                            DisplayTime(timeCounter, textList[currentIndex]);
+                            StateChange(textList[currentIndex]);
+                            
+                            timerIsRunning = false;
+                            //UnityEditor.EditorApplication.isPlaying = false;
+                        }
+                        else
+                        {
+                            //Debug.Log("YOU ARE HERE");
+                            currentIndex = i;
+                            StateChange(textList[lastIndex]);
+                            pressedList[currentIndex] = true;
+                            currentIndex++;
+                            StateChange(textList[currentIndex]);
+                            Line.AddPoint(new Vector2((currentIndex) * 57.5f, timeCounter / 20));
+                            lastIndex = currentIndex;
+                        }
+                    }
+                    else
+                    {
+                        currentIndex = i;
+                        
+                        timerIsRunning = true;
+                        StateChange(textList[currentIndex]);
+                        StateChange(textList[currentIndex]);
+                        pressedList[currentIndex] = true;
+                        currentIndex++;
+                        StateChange(textList[currentIndex]);
+                        lastIndex = currentIndex;
+                    }
                 }
             }
         }

@@ -22,7 +22,6 @@ public class JSONTest: MonoBehaviour
         public Puzzle[] puzzle;
     }
 
-
     public Puzzle myPuzzle = new Puzzle();
     public PuzzleList myPuzzleList = new PuzzleList();
 

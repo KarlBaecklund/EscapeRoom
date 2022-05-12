@@ -80,5 +80,6 @@ public class UILineRenderer : Graphic
     public void AddPoint( Vector2 pos)
     {
         points.Add(pos);
+        SetVerticesDirty();
     }
 }
