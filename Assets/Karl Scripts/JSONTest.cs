@@ -13,27 +13,42 @@ public class JSONTest: MonoBehaviour
     {
         public string name;
         public float time;
-        public int index;
     }
 
     [System.Serializable]
     public class PuzzleList
     {
-        public Puzzle[] puzzle;
+        public List<Puzzle> puzzles;
     }
 
-    public Puzzle myPuzzle = new Puzzle();
-    public PuzzleList myPuzzleList = new PuzzleList();
+    //public Puzzle myPuzzle = new Puzzle();
+    //public PuzzleList myPuzzleList = new PuzzleList();
 
     public void outPutJSON()
     {
-        string strOutPut = JsonUtility.ToJson(myPuzzleList);
+        Puzzle puzzle1 = new Puzzle();
+        puzzle1.name = "TEst";
+        puzzle1.time = 0.1f;
 
-        File.WriteAllText("Assets/Karl Scripts/Text/JSONText.txt", strOutPut);
+        string json = JsonUtility.ToJson(puzzle1);
+
+        PuzzleList puzzleListInJSON = JsonUtility.FromJson<PuzzleList>(textJSON.text);
+
+        puzzleListInJSON.puzzles.Add(puzzle1);
+
+        foreach (Puzzle puzzle in puzzleListInJSON.puzzles)
+        {
+            Debug.Log(JsonUtility.ToJson(puzzle));
+        }
+
+        string jsonToSave = JsonHelper.ToJson(puzzleListInJSON.puzzles.ToArray()); 
+        File.WriteAllText("Assets/Karl Scripts/Text/JSONText.txt", jsonToSave);
     }
 
     private void Start()
     {
+
+
         outPutJSON();
 
     }

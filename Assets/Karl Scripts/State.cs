@@ -38,7 +38,7 @@ public class State : MonoBehaviour
         if (timerIsRunning)
         {
             //Debug.Log("Main: " + (currentPuzszle));
-            timeCounter += Time.deltaTime * 60;
+            timeCounter += Time.deltaTime;
             DisplayTime(timeCounter, textList[currentIndex]);
 
             //If counts up to 1 hour the game should end 
@@ -55,6 +55,7 @@ public class State : MonoBehaviour
             {
                 if (ctx.action.name == actionList[i] && pressedList[i] == false)
                 {
+                    Debug.Log("Current: " + currentIndex + " Name: " + ctx.action.name);
                     if (i >= 1)
                     {
                         if (ctx.action.name == actionList[actionList.Count - 1])
