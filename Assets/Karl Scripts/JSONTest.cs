@@ -22,10 +22,7 @@ public class JSONTest: MonoBehaviour
         public List<Puzzle> puzzles;
     }
 
-    public PuzzleList GetPuzzle()
-    {
 
-    }
 
     public void outPutJSON()
     {
