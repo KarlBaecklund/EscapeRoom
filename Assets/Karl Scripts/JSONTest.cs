@@ -22,17 +22,23 @@ public class JSONTest: MonoBehaviour
         public List<Puzzle> puzzles;
     }
 
-
-
-    public void outPutJSON()
+    public List<List<float>> GetpuzzleList()
     {
-        PuzzleList puzzleListInJSON = JsonUtility.FromJson<PuzzleList>(textJSON.text);
-        string jsonToSave = JsonHelper.ToJson(puzzleListInJSON.puzzles.ToArray());
-        Debug.Log(jsonToSave);
-        File.WriteAllText("Assets/Karl Scripts/Text/JSONText.txt", jsonToSave);
+        string saveFile = "Assets/Karl Scripts/Text/JSONText.txt";
+        string fileContents = File.ReadAllText(saveFile);
+        PuzzleList puzzleListInJSON = JsonUtility.FromJson<PuzzleList>(fileContents);
+        List<List<float>> returnList = new List<List<float>>();
+        foreach (Puzzle puzzle in puzzleListInJSON.puzzles)
+        {
+            List<float> timesList = new List<float>();
+            foreach (float item in puzzle.times)
+            {
+                timesList.Add(item);
+            }
+            returnList.Add(timesList);
+        }
+        return returnList;
     }
-    //Tar in index och tid 
-
     public void SaveToJSON(Puzzle puzzleObj)
     {
         string saveFile = "Assets/Karl Scripts/Text/JSONText.txt";
@@ -41,16 +47,6 @@ public class JSONTest: MonoBehaviour
         puzzleListInJSON.puzzles.Add(puzzleObj);
         string jsonToSave = JsonHelper.ToJson(puzzleListInJSON.puzzles.ToArray());
         File.WriteAllText("Assets/Karl Scripts/Text/JSONText.txt", jsonToSave);
-    }
-    public void Average(Puzzle puzzleObj)
-    {
-        Line.AddPoint(new Vector2(1 * 57.5f, 500f / 20f));
-        //for (int i = 1; i < puzzleObj.times.Length; i++)
-        //{
-
-        //}
-
-
     }
     public void AddToJSON(List<float> timeList)
     {
@@ -61,7 +57,6 @@ public class JSONTest: MonoBehaviour
         }
         puzzle.name = System.DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy | HH:mm");
         SaveToJSON(puzzle);
-        Average(puzzle);
     }
 
 }

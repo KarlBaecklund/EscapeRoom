@@ -12,6 +12,8 @@ public class State : MonoBehaviour
     JSONTest jSONTest;
 
     public UILineRenderer Line;
+    public UILineRenderer Line2;
+
 
     bool[] pressedList = new bool[6];
 
@@ -28,6 +30,8 @@ public class State : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        countAverage();
+
         playerInput = GetComponent<PlayerInput>();
         foreach (var item in playerInput.actions)
         {
@@ -47,6 +51,28 @@ public class State : MonoBehaviour
 
             //If counts up to 1 hour the game should end 
         }
+    }
+
+    public void countAverage()
+    {
+        jSONTest = new JSONTest();
+        int sizeToDiv = 0;
+        float sumOfList = 0;
+        float sum = 0;
+        List<List<float>> timeList2d = jSONTest.GetpuzzleList();
+        for (int j = 0; j < 5; j++) //Hård kodat yes i know
+        {
+            for (int i = 0; i < timeList2d.Count; i++)
+            {
+                sumOfList += timeList2d[i][j];
+
+            }
+            sizeToDiv = timeList2d.Count;
+            sum = sumOfList / sizeToDiv;
+            Line2.AddPoint(new Vector2((j + 2)*57.5f, sum / 20));
+        }
+        
+        
     }
 
     public void ButtonInput(InputAction.CallbackContext ctx)
