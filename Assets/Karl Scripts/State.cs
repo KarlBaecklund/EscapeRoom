@@ -9,11 +9,14 @@ public class State : MonoBehaviour
     public List<GameObject> textList = new List<GameObject>();
     PlayerInput playerInput;
 
+    JSONTest jSONTest;
+
     public UILineRenderer Line;
 
     bool[] pressedList = new bool[6];
 
     List<string> actionList = new List<string>();
+    List<float> timeList = new List<float>();
 
     bool timerIsRunning = false;
     public float timeCounter;
@@ -38,7 +41,8 @@ public class State : MonoBehaviour
         if (timerIsRunning)
         {
             //Debug.Log("Main: " + (currentPuzszle));
-            timeCounter += Time.deltaTime;
+            timeCounter += Time.deltaTime * 60;
+            
             DisplayTime(timeCounter, textList[currentIndex]);
 
             //If counts up to 1 hour the game should end 
@@ -55,19 +59,24 @@ public class State : MonoBehaviour
             {
                 if (ctx.action.name == actionList[i] && pressedList[i] == false)
                 {
-                    Debug.Log("Current: " + currentIndex + " Name: " + ctx.action.name);
+                    //Debug.Log("Current: " + currentIndex + " Name: " + ctx.action.name);
                     if (i >= 1)
                     {
                         if (ctx.action.name == actionList[actionList.Count - 1])
                         {
+                            jSONTest = new JSONTest();
+
                             currentIndex = i;
                             Line.AddPoint(new Vector2((currentIndex + 1) * 57.5f, timeCounter / 20));
+                            timeList.Add(timeCounter);
                             StateChange(textList[currentIndex]);
                             StateChange(textList[lastIndex]);
                             DisplayTime(timeCounter, textList[currentIndex]);
                             StateChange(textList[currentIndex]);
                             
                             timerIsRunning = false;
+
+                            jSONTest.AddToJSON(timeList);
                             //UnityEditor.EditorApplication.isPlaying = false;
                         }
                         else
@@ -76,6 +85,7 @@ public class State : MonoBehaviour
                             currentIndex = i;
                             StateChange(textList[lastIndex]);
                             pressedList[currentIndex] = true;
+                            timeList.Add(timeCounter);
                             currentIndex++;
                             StateChange(textList[currentIndex]);
                             Line.AddPoint(new Vector2((currentIndex) * 57.5f, timeCounter / 20));

@@ -7,12 +7,13 @@ using UnityEngine;
 public class JSONTest: MonoBehaviour
 {
     public TextAsset textJSON;
+    public UILineRenderer Line;
 
     [System.Serializable]
     public class Puzzle
     {
         public string name;
-        public float time;
+        public float[] times = new float[5];
     }
 
     [System.Serializable]
@@ -21,35 +22,49 @@ public class JSONTest: MonoBehaviour
         public List<Puzzle> puzzles;
     }
 
-    //public Puzzle myPuzzle = new Puzzle();
-    //public PuzzleList myPuzzleList = new PuzzleList();
+    public PuzzleList GetPuzzle()
+    {
+
+    }
 
     public void outPutJSON()
     {
-        Puzzle puzzle1 = new Puzzle();
-        puzzle1.name = "TEst";
-        puzzle1.time = 0.1f;
-
-        string json = JsonUtility.ToJson(puzzle1);
-
         PuzzleList puzzleListInJSON = JsonUtility.FromJson<PuzzleList>(textJSON.text);
-
-        puzzleListInJSON.puzzles.Add(puzzle1);
-
-        foreach (Puzzle puzzle in puzzleListInJSON.puzzles)
-        {
-            Debug.Log(JsonUtility.ToJson(puzzle));
-        }
-
-        string jsonToSave = JsonHelper.ToJson(puzzleListInJSON.puzzles.ToArray()); 
+        string jsonToSave = JsonHelper.ToJson(puzzleListInJSON.puzzles.ToArray());
+        Debug.Log(jsonToSave);
         File.WriteAllText("Assets/Karl Scripts/Text/JSONText.txt", jsonToSave);
     }
+    //Tar in index och tid 
 
-    private void Start()
+    public void SaveToJSON(Puzzle puzzleObj)
     {
+        string saveFile = "Assets/Karl Scripts/Text/JSONText.txt";
+        string fileContents = File.ReadAllText(saveFile);
+        PuzzleList puzzleListInJSON = JsonUtility.FromJson<PuzzleList>(fileContents);
+        puzzleListInJSON.puzzles.Add(puzzleObj);
+        string jsonToSave = JsonHelper.ToJson(puzzleListInJSON.puzzles.ToArray());
+        File.WriteAllText("Assets/Karl Scripts/Text/JSONText.txt", jsonToSave);
+    }
+    public void Average(Puzzle puzzleObj)
+    {
+        Line.AddPoint(new Vector2(1 * 57.5f, 500f / 20f));
+        //for (int i = 1; i < puzzleObj.times.Length; i++)
+        //{
 
+        //}
 
-        outPutJSON();
 
     }
+    public void AddToJSON(List<float> timeList)
+    {
+        Puzzle puzzle = new Puzzle();
+        for (int i = 0; i < puzzle.times.Length; i++)
+        {
+            puzzle.times[i] = timeList[i];
+        }
+        puzzle.name = System.DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy | HH:mm");
+        SaveToJSON(puzzle);
+        Average(puzzle);
+    }
+
 }
