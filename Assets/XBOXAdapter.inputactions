@@ -64,7 +64,7 @@
                 {
                     "name": "",
                     "id": "84d69c89-fcf1-4fec-a115-b103c8287f44",
-                    "path": "<XInputController>/buttonWest",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -75,7 +75,7 @@
                 {
                     "name": "",
                     "id": "3def6d15-3a23-4b7c-9beb-ac0dbba7e792",
-                    "path": "<XInputController>/buttonNorth",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -86,7 +86,7 @@
                 {
                     "name": "",
                     "id": "6bd843a3-0260-4ae2-b127-63a5d34fd19b",
-                    "path": "<XInputController>/dpad/up",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -97,7 +97,7 @@
                 {
                     "name": "",
                     "id": "740f0bd2-6270-4704-8111-36ddde07b80f",
-                    "path": "<XInputController>/dpad/down",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -108,7 +108,7 @@
                 {
                     "name": "",
                     "id": "98cd3268-8f2f-409a-82ca-c158c3ac2ccf",
-                    "path": "<XInputController>/buttonSouth",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -119,7 +119,7 @@
                 {
                     "name": "",
                     "id": "372790f2-0e58-41bc-aa0d-f4aca60f171d",
-                    "path": "<XInputController>/buttonEast",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

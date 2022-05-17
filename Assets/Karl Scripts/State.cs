@@ -9,7 +9,7 @@ public class State : MonoBehaviour
     public List<GameObject> textList = new List<GameObject>();
     PlayerInput playerInput;
 
-    JSONTest jSONTest;
+    JsonManager jsonManager;
 
     public UILineRenderer Line;
     public UILineRenderer Line2;
@@ -55,11 +55,11 @@ public class State : MonoBehaviour
 
     public void countAverage()
     {
-        jSONTest = new JSONTest();
+        jsonManager = new JsonManager();
         int sizeToDiv = 0;
         float sumOfList = 0;
         float sum = 0;
-        List<List<float>> timeList2d = jSONTest.GetpuzzleList();
+        List<List<float>> timeList2d = jsonManager.GetpuzzleList();
         for (int j = 0; j < 5; j++) //Hård kodat yes i know
         {
             for (int i = 0; i < timeList2d.Count; i++)
@@ -90,7 +90,7 @@ public class State : MonoBehaviour
                     {
                         if (ctx.action.name == actionList[actionList.Count - 1])
                         {
-                            jSONTest = new JSONTest();
+                            jsonManager = new JsonManager();
 
                             currentIndex = i;
                             Line.AddPoint(new Vector2((currentIndex + 1) * 57.5f, timeCounter / 20));
@@ -102,7 +102,7 @@ public class State : MonoBehaviour
                             
                             timerIsRunning = false;
 
-                            jSONTest.AddToJSON(timeList);
+                            jsonManager.AddToJSON(timeList);
                             //UnityEditor.EditorApplication.isPlaying = false;
                         }
                         else

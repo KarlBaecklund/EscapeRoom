@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 
 [System.Serializable]
-public class JSONTest: MonoBehaviour
+public class JsonManager: MonoBehaviour
 {
     public TextAsset textJSON;
     public UILineRenderer Line;
