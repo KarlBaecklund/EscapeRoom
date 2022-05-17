@@ -44,12 +44,9 @@ public class State : MonoBehaviour
     {
         if (timerIsRunning)
         {
-            //Debug.Log("Main: " + (currentPuzszle));
-            timeCounter += Time.deltaTime * 60;
+            timeCounter += Time.deltaTime * 120;
             
             DisplayTime(timeCounter, textList[currentIndex]);
-
-            //If counts up to 1 hour the game should end 
         }
     }
 
@@ -69,7 +66,7 @@ public class State : MonoBehaviour
             }
             sizeToDiv = timeList2d.Count;
             sum = sumOfList / sizeToDiv;
-            Line2.AddPoint(new Vector2((j + 2)*57.5f, sum / 20));
+            Line2.AddPoint(new Vector2((j + 2)*57.5f, sum / 60));
         }
         
         
@@ -93,7 +90,7 @@ public class State : MonoBehaviour
                             jsonManager = new JsonManager();
 
                             currentIndex = i;
-                            Line.AddPoint(new Vector2((currentIndex + 1) * 57.5f, timeCounter / 20));
+                            Line.AddPoint(new Vector2((currentIndex + 1) * 57.5f, timeCounter / 60));
                             timeList.Add(timeCounter);
                             StateChange(textList[currentIndex]);
                             StateChange(textList[lastIndex]);
@@ -114,7 +111,7 @@ public class State : MonoBehaviour
                             timeList.Add(timeCounter);
                             currentIndex++;
                             StateChange(textList[currentIndex]);
-                            Line.AddPoint(new Vector2((currentIndex) * 57.5f, timeCounter / 20));
+                            Line.AddPoint(new Vector2((currentIndex) * 57.5f, timeCounter / 60));
                             lastIndex = currentIndex;
                         }
                     }
