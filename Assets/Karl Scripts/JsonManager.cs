@@ -24,7 +24,10 @@ public class JsonManager: MonoBehaviour
 
     public List<List<float>> GetpuzzleList()
     {
-        string saveFile = "Assets/Karl Scripts/Text/JSONText.txt";
+        //string saveFile = Application.persistentDataPath + "/JSONText.txt";
+        string saveFile = Application.streamingAssetsPath + "/Text/JSONText.txt";
+
+        Debug.Log(saveFile);
         string fileContents = File.ReadAllText(saveFile);
         PuzzleList puzzleListInJSON = JsonUtility.FromJson<PuzzleList>(fileContents);
         List<List<float>> returnList = new List<List<float>>();
@@ -41,12 +44,13 @@ public class JsonManager: MonoBehaviour
     }
     public void SaveToJSON(Puzzle puzzleObj)
     {
-        string saveFile = "Assets/Karl Scripts/Text/JSONText.txt";
+        //string saveFile = Application.persistentDataPath + "/JSONText.txt";//"Assets/Karl Scripts/Text/JSONText.txt";
+        string saveFile = Application.streamingAssetsPath + "/Text/JSONText.txt";
         string fileContents = File.ReadAllText(saveFile);
         PuzzleList puzzleListInJSON = JsonUtility.FromJson<PuzzleList>(fileContents);
         puzzleListInJSON.puzzles.Add(puzzleObj);
         string jsonToSave = JsonHelper.ToJson(puzzleListInJSON.puzzles.ToArray());
-        File.WriteAllText("Assets/Karl Scripts/Text/JSONText.txt", jsonToSave);
+        File.WriteAllText(saveFile, jsonToSave);
     }
     public void AddToJSON(List<float> timeList)
     {

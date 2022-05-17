@@ -119,7 +119,7 @@ public partial class @XBOXAdapter : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""740f0bd2-6270-4704-8111-36ddde07b80f"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
